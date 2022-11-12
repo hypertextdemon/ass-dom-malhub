@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dom 01</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- adding event listening to this button [onclick: event,]. -->
     <button onclick="SplitFunc()">Click Me</button>
 
     <!-- This is where the input text should be display -->
     <h1>Outputted Words:</h1>
-    <ul>
-
-    </ul>
-
+    <ul id="output"></ul>
 
     <!-- script start here -->
     <script>
-        // This is the function that will be called once the button is clicked
-        function SplitFunc() {
-            let value = prompt('Enter some sentence on statement');
+      // This is the function that will be called once the button is clicked
+      function SplitFunc() {
+        let value = prompt("Enter some sentence on statement");
 
-            // You Solution should goes here.
-
-            /**
-             * @Todo split the value with spaces [' '] 
-             * @Todo loop over the splited values using for loop.
-             * @Todo Output the each looped element in a list.
-            */
+        // You Solution should goes here.
+        let split = value.split(" ");
+        let result = "";
+        for (let index = 0; index < split.length; index++) {
+          const element = split[index];
+          result += `<li>${element}</li>`;
+          document.getElementById("output").innerHTML = result;
         }
+        /**
+         * @Todo split the value with spaces [' ']
+         * @Todo loop over the splited values using for loop.
+         * @Todo Output the each looped element in a list.
+         */
+      }
     </script>
-</body>
-
+  </body>
 </html>
